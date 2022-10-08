@@ -4,10 +4,10 @@
 <script src='https://cdn.rawgit.com/takahirox/a-mmd/v1.0.3/build/a-mmd.min.js'></script>
 
 <!-- include ar.js for aframe -->
-<script src='../../build/aframe-ar.js'></script>
-<script>ARjs.Context.baseURL = '../../../three.js/'</script>
+<script src='build/aframe-ar.js'></script>
+<script>ARjs.Context.baseURL = 'three.js/'</script>
 <!-- include shadowonly-plane -->
-<script src='../demo-firefox-release/src/aframe-shadow-plane.js'></script>
+<script src='src/aframe-shadow-plane.js'></script>
 
 <!-- start the body of your page -->
 <body style='margin : 0px; overflow: hidden;'>
@@ -30,7 +30,7 @@
 		<a-anchor hit-testing-enabled='true' shadow="type: pcfsoft">
                         <a-entity scale='0.08 0.08 0.08' mmd>
 				<a-entity
-					gltf-model="./assets/phoenix_bird/scene.gltf"
+					mmd-model='model : models/miku/miku_v2.pmd; vmd : models/vmds/wavefile_v2.vmd;'
 					shadow="cast:true">
 				</a-entity>
                         </a-entity>
@@ -41,49 +41,32 @@
 			</a-entity>
 			<!-- add shadow only ground -->
 			<a-entity shadowonly-plane='width: 3; height: 3; opacity: 0.4'></a-entity>
+                        <!-- <a-plane rotation="-90 0 0"
+                                color="#AAAAAA"
+                                opacity="0.5"
+                                height="15"
+                                width="15"
+                                shadow="receive:true">
+                        </a-plane> -->
+	                <!-- <a-circle
+				rotation='-90 0 0'
+                                opacity='0.5'
+				src='url(../demo-firefox/images/UV_Grid_Sm.jpg)'
+				transparency='true'
+				radius='1'
+				shadow='receive:true'>
+			</a-circle> -->
+	                <!-- <a-entity
+				rotation='-90 0 0'
+                                opacity="0.5"
+				src='url(../demo-firefox/images/transparent-texture.png)'
+				src='url(../demo-firefox/images/UV_Grid_Sm.jpg)'
+				radius="1.5"
+				shadow="receive:true">
+			</a-entity> -->
+
 		</a-anchor>
 		<!-- Define a static camera -->
 		<a-camera-static/>
 	</a-scene>
 </body>
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <meta charset='utf-8'>-->
-<!--    <meta http-equiv='X-UA-Compatible' content='IE=edge'>-->
-<!--    <title>GeoAR.js demo</title>-->
-<!--    <script src='https://aframe.io/releases/1.3.0/aframe.min.js'></script>-->
-<!--    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>-->
-<!--    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
-<!--</head>-->
-
-<!--<body style='margin: 0; overflow: hidden;'>-->
-<!--<a-scene antialias="true" embedded vr-mode-ui="enabled: false"-->
-<!--         arjs='trackingMethod: best;sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>-->
-<!--    >-->
-
-<!--    <a-entity-->
-<!--            light="type: ambient; color: #333">-->
-<!--    </a-entity>-->
-
-<!--    &lt;!&ndash; Create a anchor to attach your augmented reality &ndash;&gt;-->
-<!--    <a-anchor hit-testing-enabled='true' shadow="type: pcfsoft">-->
-<!--        <a-entity scale='0.08 0.08 0.08' mmd>-->
-<!--            <a-entity-->
-<!--                    gltf-model="./assets/phoenix_bird/scene.gltf"-->
-<!--                    shadow="cast:true">-->
-<!--            </a-entity>-->
-<!--        </a-entity>-->
-
-<!--        <a-entity-->
-<!--                light="type: directional; color: #888; intensity: 0.9; castShadow:true; shadowCameraVisible: false; shadowMapWidth:2048; shadowMapHeight:2048;"-->
-<!--                position="-5 20 5">-->
-<!--        </a-entity>-->
-<!--        &lt;!&ndash; add shadow only ground &ndash;&gt;-->
-<!--        <a-entity shadowonly-plane='width: 3; height: 3; opacity: 0.4'></a-entity>-->
-<!--    </a-anchor>-->
-<!--    &lt;!&ndash; Define a static camera &ndash;&gt;-->
-<!--    <a-camera-static/>-->
-<!--</a-scene>-->
-
-<!--</body>-->
