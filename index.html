@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GeoAR.js demo</title>
-    <script src='https://aframe.io/releases/1.3.0/aframe.min.js'></script>
-<!--    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>-->
-<!--    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
-</head>
-
-<body style='margin: 0; overflow: hidden;'>
-
-<a-scene embedded vr-mode-ui="enabled: false"
-         arjs='trackingMethod: best;sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    >
-    <!-- Create a anchor to attach your augmented reality -->
-    <a-anchor hit-testing-enabled='true'>
-        <!-- Add your augmented reality here -->
-        <a-entity scale="0.08 0.08 0.08" shadow="cast:true"
-                  mmd-model='model : models/miku/miku_v2.pmd; vmd : models/vmds/wavefile_v2.vmd;'/>
-    </a-anchor>
-    <a-entity
-            light="type: directional; color: #888; intensity: 0.9; castShadow:true; shadowCameraVisible: false; shadowMapWidth:2048; shadowMapHeight:2048;"
-            position="-5 20 5">
-    </a-entity>
-    <!-- Define a static camera -->
-    <a-camera></a-camera>
-
+<script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+<script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
+<script src="https://rawgit.com/chenzlabs/aframe-ar/827e9db/dist/aframe-ar.min.js"></script>
+<body>
+<a-scene ar>
+    <a-box width="0.25" height="0.25" depth="0.25" position="-0.25 0.125 -0.75" rotation="0 45 0"
+           color="#4CC3D9"></a-box>
+    <a-sphere position="0 0.3125 -1.25" radius="0.3125" color="#EF2D5E"></a-sphere>
+    <a-cylinder position="0.25 0.1875 -0.75" radius="0.125" height="0.375" color="#FFC65D"></a-cylinder>
+    <a-plane position="0 0 -1" rotation="-90 0 0" width="1" height="1" color="#7BC8A4" shadow></a-plane>
 </a-scene>
-
 </body>

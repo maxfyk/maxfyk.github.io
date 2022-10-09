@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GeoAR.js demo</title>
+    <script src='https://aframe.io/releases/1.3.0/aframe.min.js'></script>
+<!--    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>-->
+<!--    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+
+<a-scene embedded vr-mode-ui="enabled: false"
+         arjs='trackingMethod: best;sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    >
+    <!-- Create a anchor to attach your augmented reality -->
+    <a-anchor hit-testing-enabled='true'>
+        <!-- Add your augmented reality here -->
+        <a-entity scale="0.08 0.08 0.08" shadow="cast:true"
+                  mmd-model='model : models/miku/miku_v2.pmd; vmd : models/vmds/wavefile_v2.vmd;'/>
+    </a-anchor>
+    <a-entity
+            light="type: directional; color: #888; intensity: 0.9; castShadow:true; shadowCameraVisible: false; shadowMapWidth:2048; shadowMapHeight:2048;"
+            position="-5 20 5">
+    </a-entity>
+    <!-- Define a static camera -->
+    <a-camera></a-camera>
+
+</a-scene>
+
+</body>
